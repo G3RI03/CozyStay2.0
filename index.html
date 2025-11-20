@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/image/favlogo.jpg">
   <style>
-    body { background-color: lightgray; }
+    body { background-color: white; }
 
     /* Hero Video */
     .hero-video-section { position: relative; width: 100%; height: 100vh; overflow: hidden; }
@@ -238,6 +238,31 @@
         font-size: 1.3rem;
       }
     }
+    .carousel-caption-custom {
+  position: static; /* so it doesn't overlay image */
+  margin-top: 0.5rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .welcome-section h2 {
+    font-size: 1.5rem;
+  }
+  .welcome-section p {
+    font-size: 0.95rem;
+  }
+  .carousel-caption-custom {
+    font-size: 0.9rem;
+    padding: 3px 6px;
+  }
+}
     /* Reviews Section */
     .reviews-section { position: relative; padding: 100px 1rem; color: #fff; overflow: hidden; }
     .reviews-section .video-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
@@ -298,21 +323,58 @@
   </section>
 
   <!--Welcome Section-->
-  <section class="welcome-section">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <h2>Welcome To CozyStay Resort</h2>
-          <p>Nestled in the heart of pristine mountains and lush valleys, our boutique mountain chalet offers an unparalleled escape into nature's embrace. Experience the perfect blend of rustic charm and modern luxury.</p>
-          <p>Whether you seek adventure on mountain trails or peaceful moments by the fireplace, CozyStay Mountain provides the perfect sanctuary for your mountain getaway.</p>
-          <button class="btn btn-explore">Explore the Hotel</button>
-        </div>
-        <div class="col-md-6">
-          <img src="/image/mountain.jpg" alt="Mountain Resort" class="img-fluid">
+ <section class="welcome-section py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Text Section -->
+      <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+        <h2>Welcome To CozyStay Resort</h2>
+        <p>Nestled in the heart of pristine mountains and lush valleys, our boutique mountain chalet offers an unparalleled escape into nature's embrace. Experience the perfect blend of rustic charm and modern luxury.</p>
+        <p>Whether you seek adventure on mountain trails or peaceful moments by the fireplace, CozyStay Mountain provides the perfect sanctuary for your mountain getaway.</p>
+        <button class="btn btn-explore">Explore the Hotel</button>
+      </div>
+
+      <!-- Carousel Section -->
+      <div class="col-lg-6 col-md-12">
+        <div id="roomCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <!-- Item 1 -->
+            <div class="carousel-item active text-center">
+              <img src="image/room1.jpg" class="d-block w-100" alt="Deluxe Room">
+              <div class="carousel-caption-custom">
+                <p>Deluxe Room with mountain view</p>
+              </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="carousel-item text-center">
+              <img src="image/room2.jpg" class="d-block w-100" alt="Room 2">
+              <div class="carousel-caption-custom">
+                <p>Spacious Room with modern amenities</p>
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="carousel-item text-center">
+              <img src="image/gym.jpg" class="d-block w-100" alt="Gym">
+              <div class="carousel-caption-custom">
+                <p>Fully equipped Gym for your workout</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#roomCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#roomCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Rooms Section -->
   <section class="select-section py-5">
